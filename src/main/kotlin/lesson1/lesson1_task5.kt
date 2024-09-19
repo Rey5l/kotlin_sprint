@@ -1,10 +1,10 @@
 package org.example.lesson1
 
+const val SECONDS_IN_MINUTE = 60
+const val SECONDS_IN_HOUR = 3600
+
 fun main() {
     val totalSeconds: Short = 6480
-
-    val SECONDS_IN_MINUTE = 60
-    val SECONDS_IN_HOUR = 3600
 
     val hours = totalSeconds / SECONDS_IN_HOUR
     val remainingSeconds = totalSeconds % SECONDS_IN_HOUR
