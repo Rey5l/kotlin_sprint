@@ -1,5 +1,10 @@
 package org.example.lesson4
 
+const val MIN_CREW_SIZE = 55
+const val MAX_CREW_SIZE = 70
+const val MIN_FOOD_SUPPLY = 50
+const val RECOMMENDED_CREW_SIZE = 70
+
 fun main() {
     print("Есть ли повреждения корпуса (true/false): ")
     val hasDamage = readLine()?.toBoolean() ?: false
@@ -13,8 +18,8 @@ fun main() {
     print("Благоприятная ли погода (true/false): ")
     val isWeatherGood = readLine()?.toBoolean() ?: false
 
-    val canSail = (!hasDamage && crewSize in 55..70 && foodSupply > 50) ||
-            (hasDamage && crewSize == 70 && isWeatherGood && foodSupply >= 50)
+    val canSail = (!hasDamage && crewSize in MIN_CREW_SIZE..MAX_CREW_SIZE && foodSupply > MIN_FOOD_SUPPLY) ||
+            (hasDamage && crewSize == RECOMMENDED_CREW_SIZE && isWeatherGood && foodSupply >= MIN_FOOD_SUPPLY)
 
     println("Корабль может отправиться в плавание: $canSail")
 }
